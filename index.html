@@ -12,66 +12,126 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" type="text/javascript"></script>
     <title>Sign Up</title>
 </head>
 
 <body>
     <div class="card text-center mx-auto mt-5" style="width: 28rem;">
-        
+
         <div class="card-body m-4">
 
             <h2 class="card-title my-4">Create An Account Today!</h2>
-            <!-- https://frontend-take-home.fetchrewards.com/formuser -->
-        <form>
-            <div class="input-group mb-2">
-                <input type="text" class="form-control" id="fullName"
-                name="fullName" placeholder="Full Name" required/>
-            </div>
 
-            <div class="input-group mb-2">
-                <input type="email" class="form-control" id="email" placeholder="E-mail Address" aria-describedby="emailHelp" required>
-            </div>
+            <form onsubmit='return onSubmit(this)'   
+                id="userForm" 
+                action="https://frontend-take-home.fetchrewards.com/form" 
+                method="POST">
+                <div class="input-group mb-2">
+                    <input 
+                    type="text"
+                    name="fullName"  
+                    class="form-control" 
+                    id="fullName" 
+                    placeholder="Full Name"
+                    aria-describedby="full name here"
+                    required />
+                </div>
+
+                <div class="input-group mb-2">
+                    <input 
+                    type="email"
+                    name="email" 
+                    class="form-control" 
+                    id="email" 
+                    placeholder="E-mail Address" 
+                    aria-describedby="emailHelp" 
+                    required>
+                </div>
                 <div id="emailHelp" class="form-text mb-2">We'll never share your email with anyone else.
                 </div>
 
-            <div class="input-group mb-2">
-                <input type="password" id="password" class="form-control" placeholder="Password"  aria-describedby="passwordHelpBlock" required>
+                <div class="input-group mb-2">
+                    <input 
+                    type="password" 
+                    name="password"               
+                    class="form-control"
+                    id="password" 
+                    placeholder="Password"
+                    aria-describedby="passwordHelpBlock" 
+                    required>
+                </div>
+                <div id="passwordHelpBlock" class="form-text mb-2">
+                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain
+                    spaces,
+                    special characters, or emoji.
+                </div>
+
+                <div class="input-group mb-2" id="occupation-div">
+                    <select 
+                    name="occupation-select"
+                    class="form-select" 
+                    id="occupation-select" 
+                    aria-label="Select your occupation" 
+                    required>
+                        <option selected disabled value="">Occupation</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-4" id="state-div">
+                    <select 
+                    name="state-select"
+                    class="form-select" 
+                    id="state-select" 
+                    aria-label="Select a state" 
+                    required>
+                        <option selected disabled value="">State</option>
+                    </select>
+                </div>
+
+                <button type="submit" value="submit" class="btn btn-light" id="submit-btn">Sign Up</button>
+
+
+            </form>
+            <div class="card-footer">
+                <div id="success-response">
+
+                </div>
             </div>
-            <div id="passwordHelpBlock" class="form-text mb-2">
-                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces,
-                special characters, or emoji.
-            </div>
-
-            <div class="input-group mb-2" id="occupation-div">
-                    <select class="form-select" id="occupation-select" aria-label="Select your occupation" required>
-                          <option selected disabled value="">Occupation</option>
-                   </select>
-            </div>
-
-            <div class="input-group mb-4" id="state-div">
-               <select class="form-select" id="state-select" aria-label="Select a state" required>
-                      <option selected disabled value="">State</option>
-               </select>
-        </div>
-
-        <button type="submit" class="btn btn-light" id="submit-btn">Sign Up</button>
-
-        <div class="card-footer">
-            <div id="success-response">
-
-            </div>
-          </div>
-
-        </form>
         </div>
 
     </div>
 
-    <!-- jQuery CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/javascript"></script>
+
     <!-- My script -->
     <script src="./scripts.js"></script>
+    <script>
+    function onSubmit(form) {
+
+        let fullName = $('#fullName').val();
+        let email = $('#email').val();
+        let password = $('#password').val();
+        let occupation = $('#occupation-select option:selected').val();
+        let usersState = $('#state-select option:selected').val();
+
+        let userInfo = {
+            name: fullName,
+            email: email,
+            password: password,
+            occupation: occupation,
+            state: usersState
+        }
+        console.log(JSON.stringify(userInfo));
+        $("#success-response").text("Success, " + fullName + "!")
+        //don't submit
+
+        return false;
+         
+    }
+    </script> 
 </body>
 
 </html>
