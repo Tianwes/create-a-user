@@ -17,7 +17,8 @@ Frontend account sign-up form using GET method to populate dropdowns and Post to
 CDN links are already provided, update as needed.
 
 ## Usage
-Working with GET and Post methods and response codes.
+Working with GET and Post methods and response codes.   
+ [The Deployed Site](https://tianwes.github.io/create-a-user/)
 
 ## Images
 ![127 0 0 1_5502_create-a-user_index html(Nest Hub Max)](https://user-images.githubusercontent.com/72744783/151670946-4ff28096-9792-422f-8db0-0b1d9b014914.png)
