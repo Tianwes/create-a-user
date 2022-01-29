@@ -124,9 +124,9 @@
 
     <footer class="footer mt-auto py-3">
         <!-- <div class="container"> -->
-          <span class="text-muted"><a href="https://www.vecteezy.com/free-vector/teaching">Teaching Vectors by Vecteezy</a>
+          <span class="text-muted"><a href="https://www.vecteezy.com/free-vector/teaching" class="footer-link">Teaching Vectors by Vecteezy</a>
         </span>
-        <span class="text-muted"><a href="https://www.vecteezy.com/free-vector/background">Background Vectors by Vecteezy</a></span>
+        <span class="text-muted"><a href="https://www.vecteezy.com/free-vector/background" class="footer-link">Background Vectors by Vecteezy</a></span>
         <!-- </div> -->
       </footer>
 
@@ -154,6 +154,7 @@
         $(".card-header").css("background-color", "#40b5a4").text("Success! Teach me your ways, " + userInfo.occupation);
         $(".card-body").addClass("success-card-body");
         $(".card-header").addClass("success-card-header");
+        $(".navbar").addClass("success-navbar");
 
 
         $.ajax({

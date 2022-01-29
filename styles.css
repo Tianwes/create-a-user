@@ -13,7 +13,7 @@ box-shadow: 0px 0px 15px #c4c5c5;
     /* background-color: #48dba7; */
     background: rgb(72,219,167);
 background: linear-gradient(90deg, rgba(72,219,167,1) 20%, rgba(159,232,142,1) 88%);
-box-shadow: 0px 0px 15px #ffff;
+box-shadow: 0px 0px 15px #676767;
 }
 #logo-img {
    height:5em;
@@ -34,10 +34,11 @@ box-shadow: 0px 0px 15px #ffff;
 .card-header {
     font-family: 'BenchNine', sans-serif;
     background-color: transparent;
+    height: 120px;
 }
 .card {
     border-radius: 30px;
-    box-shadow: 3px 4px 12px #ffff;
+    box-shadow: 3px 4px 12px #676767;
     margin-bottom: 50px;
 }
 .card-body {
@@ -49,21 +50,33 @@ box-shadow: 0px 0px 15px #ffff;
 
 
 }
+/* NAVBAR on successful submit */
+.success-navbar{
+    box-shadow: 0px 0px 15px #ffff;
+    
+}
+.input {
+border-radius: 55px;
+}
 /* Card on successful submit */
 .success-card-body {
-    box-shadow: 6px 7px 18px #06a536;
+    box-shadow: 6px 7px 18px #ffff;
     
 }
 .success-card-header {
     font-size: 2em;
-}
-.input {
-border-radius: 55px;
+    border: inset #dfdfdf;
+    height: 120px;
 }
 footer {
     text-align: -webkit-center;
     box-shadow: 0px -2px 18px #ffff;
 }
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
+
 /* transform-style:preserve-3d; */
 
 /* Fonts used */
